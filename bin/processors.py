@@ -146,7 +146,11 @@ name_patterns = [
     compile(r'(?:Toshiba|Motorola|Intel|Texas Instruments) (?P<name>.*)'),
     compile(r'(?P<name>.*) PA-RISC Version .*'),
     compile(r'\d{4} – (IBM )?(?P<name>.*)'),
+    compile(r'(?P<name>Am[0-9x]+) .*'),
+    compile(r'(?P<name>Athlon) \d-series'),
+    compile(r'(?P<name>Athlon XP) \(.*'),
     compile(r'(?P<name>.*) \d+-bit \([^)]+\)'),
+    compile(r'(?P<name>[0-9x]+) \w.*'),
     compile(r'(?P<name>.*) \([^)]+\)'),
     compile(r'(?P<name>.*) (?:architecture|[fF]amily|etc.|Processor|CPU|stack)'),
     compile(r'(?P<name>.*?)(\[[^]]+\])+')
@@ -162,6 +166,7 @@ multi_patterns = [
     { 'pattern': compile(r'(?P<names>µ\S+(?:\s*/\s*µ\S+)+)'), 'sep': '/' },
     { 'pattern': compile(r'(?P<prefix>Transputer) (?P<names>T\d(?:\s*/\s*T\d+)+)'), 'sep': '/' },
     { 'pattern': compile(r'(?P<prefix>SuperH) (?P<names>SH-.+?(?:\s*/\s*SH-.+?)+)'), 'sep': '/' },
+    { 'pattern': compile(r'(?P<prefix>microNOVA) (?P<names>mN.+(?: and mN.+)+)'), 'sep': ' and ' },
 ]
 
 baseUrl = 'https://en.wikipedia.org/wiki/List_of_microprocessors'
