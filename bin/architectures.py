@@ -55,6 +55,6 @@ for i in listItems:
         if include(link) and not format(link.getText()) in answers:
             answers.add(format(link.getText()))
 
-    for answer in answers:
-        print(answer)
+for answer in sorted(answers):
+    print(answer)
 
