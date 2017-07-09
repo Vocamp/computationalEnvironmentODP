@@ -2,3 +2,4 @@ CompEnvUpdater/.settings/
 CompEnvUpdater/bin/
 CompEnvUpdater/target/
 bin/*.jar
+*.un~
