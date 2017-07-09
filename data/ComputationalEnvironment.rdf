@@ -1,0 +1,691 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#"
+     xml:base="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#acquiredFrom -->
+
+
+    <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#acquiredFrom"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture -->
+
+
+    <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent -->
+
+
+    <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasDistribution -->
+
+
+    <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasDistribution"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasEnvironmentVariable -->
+
+
+    <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasEnvironmentVariable"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasFrequency -->
+
+
+    <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasFrequency"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasKernel -->
+
+
+    <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasKernel"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasProcessorType -->
+
+
+    <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasProcessorType">
+        <rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize -->
+
+
+    <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasCores -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasCores">
+        <rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasDistributionVersion -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasDistributionVersion">
+        <rdfs:subPropertyOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVersion"/>
+        <rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OperatingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasKernelVersion -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasKernelVersion">
+        <rdfs:subPropertyOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVersion"/>
+        <rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OperatingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumericValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumericValue"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasStringValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasStringValue"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasValue"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVersion -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVersion">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVirtualAddress -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVirtualAddress">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumericValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Component -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Component"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+                <owl:allValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Component"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Disk -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Disk">
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize"/>
+                <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Distribution -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Distribution">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVersion"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasValue"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware">
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IO_Device -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IO_Device">
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Kernel -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Kernel">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVersion"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Location -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Location"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Memory -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Memory">
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize"/>
+                <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#NetworkInterface -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#NetworkInterface">
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVirtualAddress"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OS_Shell_Environment -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OS_Shell_Environment">
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Component"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasEnvironmentVariable"/>
+                <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasEnvironmentVariable"/>
+                <owl:allValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasEnvironmentVariable"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OperatingSystem -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OperatingSystem">
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Component"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasDistribution"/>
+                <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Distribution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasKernel"/>
+                <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Kernel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasDistribution"/>
+                <owl:allValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Distribution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasKernel"/>
+                <owl:allValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Kernel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasDistribution"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Distribution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasKernel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Kernel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasDistributionVersion"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasKernelVersion"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor">
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture"/>
+                <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorArchitecture"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasFrequency"/>
+                <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasProcessorType"/>
+                <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture"/>
+                <owl:allValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorArchitecture"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasProcessorType"/>
+                <owl:allValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorArchitecture"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasProcessorType"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasCores"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasCores"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorArchitecture -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorArchitecture"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorType -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorType"/>
+    
+
+
+    <!-- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Software -->
+
+
+    <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Software">
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Component"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#acquiredFrom"/>
+                <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVersion"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVersion"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVersion"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount"/>
+            <rdf:Description rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable"/>
+        </owl:unionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasStringValue"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Disk"/>
+            <rdf:Description rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Memory"/>
+        </owl:unionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize"/>
+                <owl:allValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable"/>
+            <rdf:Description rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Software"/>
+        </owl:unionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasName"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture"/>
+        <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ProcessorArchitecture"/>
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+        <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Component"/>
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasDistribution"/>
+        <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Distribution"/>
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OperatingSystem"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasEnvironmentVariable"/>
+        <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable"/>
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OS_Shell_Environment"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasKernel"/>
+        <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Kernel"/>
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OperatingSystem"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasCores"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/ -->
+
+
