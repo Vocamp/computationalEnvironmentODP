@@ -1,3 +1,0 @@
-architecture1
-architecture2
-architecture3

@@ -1,3 +1,0 @@
-distro1
-distro2
-distro3

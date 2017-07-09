@@ -2,4 +2,5 @@ CompEnvUpdater/.settings/
 CompEnvUpdater/bin/
 CompEnvUpdater/target/
 bin/*.jar
+data/*.txt
 *.un~

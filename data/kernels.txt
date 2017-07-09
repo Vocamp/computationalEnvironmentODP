@@ -1,3 +1,0 @@
-kernel1
-kernel2
-kernet3
