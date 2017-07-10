@@ -15,7 +15,7 @@ java -jar bin/CompEnvUpdater.jar
 
 ontology=data/ComputationalEnvironment.rdf
 
-if [[ -n $(git diff-index --name-only HEAD -- $ontology) ]]; then
+if [[ -n $(git diff --name-only -- $ontology) ]]; then
 	echo ">> The ontology has changed."
 	read -p ">> Commit it [y/n]? " yn
 	if [[ $yn == "y" ]]; then
