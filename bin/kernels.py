@@ -122,6 +122,6 @@ for i in listItems:
     if links and includeA(links[0]) and not links[0].getText() in answers:
         answers.add(links[0].getText())
 
-for answer in answers:
+for answer in sorted(answers):
     print(answer)
 

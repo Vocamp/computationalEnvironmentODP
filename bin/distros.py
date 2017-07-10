@@ -157,6 +157,6 @@ for i in items:
     if links and not links[0].getText() in ignore: 
         answers.add(links[0].getText())
 
-for answer in answers:
+for answer in sorted(answers):
     print(answer)
 
