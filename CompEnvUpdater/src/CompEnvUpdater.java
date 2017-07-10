@@ -52,7 +52,7 @@ public class CompEnvUpdater {
 	private static String clean(String s) {
 		String term = s.trim();
 		term = term.replaceAll(" ", "_");
-		term = term.replaceAll("[\\+]", "");
+		term = term.replaceAll("\\\\", "_");
 		term = term.replaceAll("/", "-");
 		term = term.replaceAll("\"", "");
 		term = term.replaceAll("&", "_and_");
