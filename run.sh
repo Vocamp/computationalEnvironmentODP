@@ -2,6 +2,8 @@
 
 set -e
 
+export LANG=en_US.UTF-8
+
 echo ">> Gathering processor names..."
 python3 bin/processors.py > data/processors.txt
 echo ">> Gathering processor architectures..."
