@@ -24,7 +24,7 @@
     <Import>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl</Import>
     <Annotation>
         <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements"/>
-        <Literal datatypeIRI="&xsd;string">Our goal was to arrive at an ontology design pattern that is capable of answering the following competency questions:
+        <Literal>Our goal was to arrive at an ontology design pattern that is capable of answering the following competency questions:
 
 – What environment do I need to put in place in order to replicate the work in Paper X?
 
@@ -38,19 +38,19 @@ environment perspective?</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent"/>
-        <Literal datatypeIRI="&xsd;string">The pattern is intended to support comparison and reproducibility of computational analyses.</Literal>
+        <Literal>The pattern is intended to support comparison and reproducibility of computational analyses.</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <Literal datatypeIRI="&xsd;string">ComputationalEnvironment</Literal>
+        <Literal>ComputationalEnvironment</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios"/>
-        <Literal datatypeIRI="&xsd;string">The tool Wireshark was run on a particular computer in order to analyze network traffic.</Literal>
+        <Literal>The tool Wireshark was run on a particular computer in order to analyze network traffic.</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal datatypeIRI="&xsd;string">The Computational Environment ontology design pattern models the environment in which a computational analysis was conducted down to the hardware level.</Literal>
+        <Literal>The Computational Environment ontology design pattern models the environment in which a computational analysis was conducted down to the hardware level.</Literal>
     </Annotation>
     <Declaration>
         <Class IRI="#Amount"/>
@@ -10296,92 +10296,92 @@ environment perspective?</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Amount</IRI>
-        <Literal datatypeIRI="&xsd;string">Indicates the quantity of something</Literal>
+        <Literal>Indicates the quantity of something</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Component</IRI>
-        <Literal datatypeIRI="&xsd;string">Any part (physical or virtual) of something else</Literal>
+        <Literal>Any part (physical or virtual) of something else</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ComputationalEnvironment</IRI>
-        <Literal datatypeIRI="&xsd;string">The environment in which a computational analysis was conducted</Literal>
+        <Literal>The environment in which a computational analysis was conducted</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Disk</IRI>
-        <Literal datatypeIRI="&xsd;string">A device capable of persistently storing data</Literal>
+        <Literal>A device capable of persistently storing data</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Distribution</IRI>
-        <Literal datatypeIRI="&xsd;string">An operating system made from a collection of software surrounding some kernel</Literal>
+        <Literal>An operating system made from a collection of software surrounding some kernel</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#EnvironmentVariable</IRI>
-        <Literal datatypeIRI="&xsd;string">A variable set within the environment that a program executes inside that controls some aspect of a program&apos;s behavior; does not include command line parameters</Literal>
+        <Literal>A variable set within the environment that a program executes inside that controls some aspect of a program&apos;s behavior; does not include command line parameters</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Hardware</IRI>
-        <Literal datatypeIRI="&xsd;string">A physical component</Literal>
+        <Literal>A physical component</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#IO_Device</IRI>
-        <Literal datatypeIRI="&xsd;string">A device that transfers data between a computer and an external entity</Literal>
+        <Literal>A device that transfers data between a computer and an external entity</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Kernel</IRI>
-        <Literal datatypeIRI="&xsd;string">The core of a computer&apos;s operating system</Literal>
+        <Literal>The core of a computer&apos;s operating system</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Location</IRI>
-        <Literal datatypeIRI="&xsd;string">A (virtual or physical) place</Literal>
+        <Literal>A (virtual or physical) place</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Memory</IRI>
-        <Literal datatypeIRI="&xsd;string">A device capable of transient data storage</Literal>
+        <Literal>A device capable of transient data storage</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#NetworkInterface</IRI>
-        <Literal datatypeIRI="&xsd;string">A device that transfers information between a computer and a network</Literal>
+        <Literal>A device that transfers information between a computer and a network</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OS_Shell_Environment</IRI>
-        <Literal datatypeIRI="&xsd;string">An interface for a (physical or virtual) user to access an operating system</Literal>
+        <Literal>An interface for a (physical or virtual) user to access an operating system</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OperatingSystem</IRI>
-        <Literal datatypeIRI="&xsd;string">System software that manages a computer&apos;s components</Literal>
+        <Literal>System software that manages a computer&apos;s components</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Processor</IRI>
-        <Literal datatypeIRI="&xsd;string">A component within a computer that carries out the instructions of a program</Literal>
+        <Literal>A component within a computer that carries out the instructions of a program</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ProcessorArchitecture</IRI>
-        <Literal datatypeIRI="&xsd;string">An implementation of an instruction set architecture</Literal>
+        <Literal>An implementation of an instruction set architecture</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ProcessorType</IRI>
-        <Literal datatypeIRI="&xsd;string">A processor family or model; all processors of a particular type have the same processor architecture</Literal>
+        <Literal>A processor family or model; all processors of a particular type have the same processor architecture</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Software</IRI>
-        <Literal datatypeIRI="&xsd;string">Instructions executed by a computer</Literal>
+        <Literal>Instructions executed by a computer</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
