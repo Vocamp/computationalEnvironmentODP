@@ -154,9 +154,6 @@ environment perspective?</Literal>
         <DataProperty IRI="#hasUnit"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasValue"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#hasVersion"/>
     </Declaration>
     <Declaration>
@@ -5036,7 +5033,7 @@ environment perspective?</Literal>
     <SubClassOf>
         <Class IRI="#EnvironmentVariable"/>
         <DataSomeValuesFrom>
-            <DataProperty IRI="#hasValue"/>
+            <DataProperty IRI="#hasStringValue"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
     </SubClassOf>
@@ -5050,7 +5047,7 @@ environment perspective?</Literal>
     <SubClassOf>
         <Class IRI="#EnvironmentVariable"/>
         <DataMaxCardinality cardinality="1">
-            <DataProperty IRI="#hasValue"/>
+            <DataProperty IRI="#hasStringValue"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataMaxCardinality>
     </SubClassOf>

@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://dase.cs.wright.edu/ontologies/ExampleCompEnv"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://dase.cs.wright.edu/ontologies/ExampleCompEnv">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Import>http://dase.cs.wright.edu/ontologies/ComputationalEnvironment</Import>
+    <Declaration>
+        <NamedIndividual IRI="#exComputationalEnv"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exDisk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exDiskSize"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exEnvironmentVariable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exFrequency"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exKeyboard"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exLocation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exMemSize"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exMemory"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exMonitor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exNetworkInterface"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exOperatingSystem"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exProcessor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exShellEnv"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exSoftware"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment"/>
+        <NamedIndividual IRI="#exComputationalEnv"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Disk"/>
+        <NamedIndividual IRI="#exDisk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount"/>
+        <NamedIndividual IRI="#exDiskSize"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable"/>
+        <NamedIndividual IRI="#exEnvironmentVariable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount"/>
+        <NamedIndividual IRI="#exFrequency"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IO_Device"/>
+        <NamedIndividual IRI="#exKeyboard"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Amount"/>
+        <NamedIndividual IRI="#exMemSize"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Memory"/>
+        <NamedIndividual IRI="#exMemory"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IO_Device"/>
+        <NamedIndividual IRI="#exMonitor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#NetworkInterface"/>
+        <NamedIndividual IRI="#exNetworkInterface"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OperatingSystem"/>
+        <NamedIndividual IRI="#exOperatingSystem"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor"/>
+        <NamedIndividual IRI="#exProcessor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OS_Shell_Environment"/>
+        <NamedIndividual IRI="#exShellEnv"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Software"/>
+        <NamedIndividual IRI="#exSoftware"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+        <NamedIndividual IRI="#exComputationalEnv"/>
+        <NamedIndividual IRI="#exOperatingSystem"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+        <NamedIndividual IRI="#exComputationalEnv"/>
+        <NamedIndividual IRI="#exSoftware"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+        <NamedIndividual IRI="#exComputationalEnv"/>
+        <NamedIndividual IRI="#exMemory"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+        <NamedIndividual IRI="#exComputationalEnv"/>
+        <NamedIndividual IRI="#exNetworkInterface"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+        <NamedIndividual IRI="#exComputationalEnv"/>
+        <NamedIndividual IRI="#exMonitor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+        <NamedIndividual IRI="#exComputationalEnv"/>
+        <NamedIndividual IRI="#exShellEnv"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+        <NamedIndividual IRI="#exComputationalEnv"/>
+        <NamedIndividual IRI="#exDisk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+        <NamedIndividual IRI="#exComputationalEnv"/>
+        <NamedIndividual IRI="#exProcessor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasComponent"/>
+        <NamedIndividual IRI="#exComputationalEnv"/>
+        <NamedIndividual IRI="#exKeyboard"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize"/>
+        <NamedIndividual IRI="#exDisk"/>
+        <NamedIndividual IRI="#exDiskSize"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize"/>
+        <NamedIndividual IRI="#exMemory"/>
+        <NamedIndividual IRI="#exMemSize"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasKernel"/>
+        <NamedIndividual IRI="#exOperatingSystem"/>
+        <NamedIndividual IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#macOS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture"/>
+        <NamedIndividual IRI="#exProcessor"/>
+        <NamedIndividual IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#x86-64"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasFrequency"/>
+        <NamedIndividual IRI="#exProcessor"/>
+        <NamedIndividual IRI="#exFrequency"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasProcessorType"/>
+        <NamedIndividual IRI="#exProcessor"/>
+        <NamedIndividual IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Intel_Core_i5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasEnvironmentVariable"/>
+        <NamedIndividual IRI="#exShellEnv"/>
+        <NamedIndividual IRI="#exEnvironmentVariable"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#acquiredFrom"/>
+        <NamedIndividual IRI="#exSoftware"/>
+        <NamedIndividual IRI="#exLocation"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumericValue"/>
+        <NamedIndividual IRI="#exDiskSize"/>
+        <Literal datatypeIRI="&xsd;integer">500</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit"/>
+        <NamedIndividual IRI="#exDiskSize"/>
+        <Literal datatypeIRI="&xsd;string">GB</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasName"/>
+        <NamedIndividual IRI="#exEnvironmentVariable"/>
+        <Literal datatypeIRI="&xsd;string">SSH_CONNECTION</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasStringValue"/>
+        <NamedIndividual IRI="#exEnvironmentVariable"/>
+        <Literal datatypeIRI="&xsd;string">xxx:xxx:xxx:xxx 60123 yyy:yyy:yyy:yyy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumericValue"/>
+        <NamedIndividual IRI="#exFrequency"/>
+        <Literal datatypeIRI="&xsd;double">2.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit"/>
+        <NamedIndividual IRI="#exFrequency"/>
+        <Literal datatypeIRI="&xsd;string">GHz</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasName"/>
+        <NamedIndividual IRI="#exLocation"/>
+        <Literal datatypeIRI="&xsd;string">https://1.na.dl.wireshark.org/osx/Wireshark%202.2.7%20Intel%2064.dmg</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumericValue"/>
+        <NamedIndividual IRI="#exMemSize"/>
+        <Literal datatypeIRI="&xsd;integer">16</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit"/>
+        <NamedIndividual IRI="#exMemSize"/>
+        <Literal datatypeIRI="&xsd;string">GB</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVirtualAddress"/>
+        <NamedIndividual IRI="#exNetworkInterface"/>
+        <Literal datatypeIRI="&xsd;string">xxx.xxx.xxx.xxx</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasKernelVersion"/>
+        <NamedIndividual IRI="#exOperatingSystem"/>
+        <Literal datatypeIRI="&xsd;string">10.12.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasCores"/>
+        <NamedIndividual IRI="#exProcessor"/>
+        <Literal datatypeIRI="&xsd;integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasName"/>
+        <NamedIndividual IRI="#exSoftware"/>
+        <Literal datatypeIRI="&xsd;string">wireshark</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVersion"/>
+        <NamedIndividual IRI="#exSoftware"/>
+        <Literal datatypeIRI="&xsd;string">2.2.7</Literal>
+    </DataPropertyAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
