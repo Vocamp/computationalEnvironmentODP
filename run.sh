@@ -23,8 +23,6 @@ if [[ -n $(git diff --name-only -- $ontology) ]]; then
 	if [[ $yn == "y" ]]; then
 		echo ">> Committing..."
 		git commit "$ontology" -m "Update ontology"
-		echo ">> Pushing..."
-		# git push origin
 	else
 		echo ">> Discarding..."
 		git checkout "$ontology"
