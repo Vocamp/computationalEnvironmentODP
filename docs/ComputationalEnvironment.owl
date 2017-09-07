@@ -23,8 +23,24 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl</Import>
     <Annotation>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The tool Wireshark was run on a particular computer in order to analyze network traffic.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The pattern is intended to support comparison and reproducibility of computational analyses.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The Computational Environment ontology design pattern models the environment in which a computational analysis was conducted down to the hardware level.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ComputationalEnvironment</Literal>
+    </Annotation>
+    <Annotation>
         <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements"/>
-        <Literal>Our goal was to arrive at an ontology design pattern that is capable of answering the following competency questions:
+        <Literal datatypeIRI="&rdf;PlainLiteral">Our goal was to arrive at an ontology design pattern that is capable of answering the following competency questions:
 
 – What environment do I need to put in place in order to replicate the work in Paper X?
 
@@ -35,24 +51,17 @@
 – Are the results from Study A and Study B comparable from a computational
 environment perspective?</Literal>
     </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent"/>
-        <Literal>The pattern is intended to support comparison and reproducibility of computational analyses.</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <Literal>ComputationalEnvironment</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios"/>
-        <Literal>The tool Wireshark was run on a particular computer in order to analyze network traffic.</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal>The Computational Environment ontology design pattern models the environment in which a computational analysis was conducted down to the hardware level.</Literal>
-    </Annotation>
     <Declaration>
         <Class IRI="#Amount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CPU"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CPUArchitecture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CPUType"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Component"/>
@@ -68,6 +77,9 @@ environment perspective?</Literal>
     </Declaration>
     <Declaration>
         <Class IRI="#EnvironmentVariable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GPU"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Hardware"/>
@@ -97,19 +109,16 @@ environment perspective?</Literal>
         <Class IRI="#Processor"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ProcessorArchitecture"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ProcessorType"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Software"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#acquiredFrom"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasArchitecture"/>
+        <ObjectProperty IRI="#hasCPUArchitecture"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCPUType"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasComponent"/>
@@ -125,9 +134,6 @@ environment perspective?</Literal>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasKernel"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasProcessorType"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSize"/>
@@ -3733,6 +3739,422 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Эльбрус-1_(Elbrus-1)"/>
     </Declaration>
     <EquivalentClasses>
+        <Class IRI="#CPUArchitecture"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#AP-101"/>
+            <NamedIndividual IRI="#eSi-RISC"/>
+            <NamedIndividual IRI="#UNIVAC_1100-2200_series"/>
+            <NamedIndividual IRI="#x86"/>
+            <NamedIndividual IRI="#XScale"/>
+            <NamedIndividual IRI="#6800"/>
+            <NamedIndividual IRI="#SPARC"/>
+            <NamedIndividual IRI="#PowerPC"/>
+            <NamedIndividual IRI="#Cell"/>
+            <NamedIndividual IRI="#POWER"/>
+            <NamedIndividual IRI="#Itanium"/>
+            <NamedIndividual IRI="#Renesas"/>
+            <NamedIndividual IRI="#Transputer"/>
+            <NamedIndividual IRI="#PIC"/>
+            <NamedIndividual IRI="#x86-64"/>
+            <NamedIndividual IRI="#Parallax_Propeller"/>
+            <NamedIndividual IRI="#65816"/>
+            <NamedIndividual IRI="#VAX"/>
+            <NamedIndividual IRI="#Power"/>
+            <NamedIndividual IRI="#MSP430"/>
+            <NamedIndividual IRI="#EDSAC"/>
+            <NamedIndividual IRI="#Milkymist"/>
+            <NamedIndividual IRI="#SuperH"/>
+            <NamedIndividual IRI="#z-Architecture"/>
+            <NamedIndividual IRI="#PDP-11"/>
+            <NamedIndividual IRI="#RX_CPU"/>
+            <NamedIndividual IRI="#StrongARM"/>
+            <NamedIndividual IRI="#AMD64"/>
+            <NamedIndividual IRI="#PDP-8"/>
+            <NamedIndividual IRI="#Alpha"/>
+            <NamedIndividual IRI="#Apollo_Guidance_Computer"/>
+            <NamedIndividual IRI="#PA-RISC"/>
+            <NamedIndividual IRI="#6502"/>
+            <NamedIndividual IRI="#ETRAX_CRIS"/>
+            <NamedIndividual IRI="#System-370"/>
+            <NamedIndividual IRI="#68000"/>
+            <NamedIndividual IRI="#ARM64"/>
+            <NamedIndividual IRI="#Loongson"/>
+            <NamedIndividual IRI="#8051"/>
+            <NamedIndividual IRI="#Burroughs_large_systems"/>
+            <NamedIndividual IRI="#MIL-STD-1750"/>
+            <NamedIndividual IRI="#MIL-STD-1750A"/>
+            <NamedIndividual IRI="#ESA-390"/>
+            <NamedIndividual IRI="#Intel_64"/>
+            <NamedIndividual IRI="#Z80"/>
+            <NamedIndividual IRI="#Intel_4004"/>
+            <NamedIndividual IRI="#IA-32"/>
+            <NamedIndividual IRI="#System-360"/>
+            <NamedIndividual IRI="#ARM"/>
+            <NamedIndividual IRI="#AVR"/>
+            <NamedIndividual IRI="#MIPS"/>
+            <NamedIndividual IRI="#Unisys"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#CPUType"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#AMD_Phenom_X4"/>
+            <NamedIndividual IRI="#AMD_292xx"/>
+            <NamedIndividual IRI="#AMD_Phenom_X3"/>
+            <NamedIndividual IRI="#Lattice_Semiconductor_LatticeMico32"/>
+            <NamedIndividual IRI="#IBM_P2SC"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R18000"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-7000"/>
+            <NamedIndividual IRI="#Texas_Instruments_TMS1000"/>
+            <NamedIndividual IRI="#VIA_C3"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC55xx"/>
+            <NamedIndividual IRI="#Emotion_Engine_by_Sony__and__Toshiba_Emotion_Engine"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC711x"/>
+            <NamedIndividual IRI="#Zilog_Z80"/>
+            <NamedIndividual IRI="#Intel_80386DX"/>
+            <NamedIndividual IRI="#NEC_μCOM-4"/>
+            <NamedIndividual IRI="#AMD_Phenom_FX"/>
+            <NamedIndividual IRI="#Hitachi_SuperH_SH-2"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_ColdFire+"/>
+            <NamedIndividual IRI="#Hitachi_SuperH_SH-1"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8102"/>
+            <NamedIndividual IRI="#Intel_Celeron"/>
+            <NamedIndividual IRI="#Apollo_PRISM"/>
+            <NamedIndividual IRI="#EnSilica_eSI-RISC"/>
+            <NamedIndividual IRI="#Sunway_SW1600"/>
+            <NamedIndividual IRI="#VIA_C7"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-7100LC"/>
+            <NamedIndividual IRI="#National_Semiconductor_SC-MP"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R3000A"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8122-26"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC"/>
+            <NamedIndividual IRI="#NEC_V850"/>
+            <NamedIndividual IRI="#Intel_80251"/>
+            <NamedIndividual IRI="#Intersil_6100"/>
+            <NamedIndividual IRI="#Zilog_Z8000"/>
+            <NamedIndividual IRI="#AMD_29050"/>
+            <NamedIndividual IRI="#Intel_80376"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-8200"/>
+            <NamedIndividual IRI="#Texas_Instruments_TMS7000"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_604e"/>
+            <NamedIndividual IRI="#AMD_8086"/>
+            <NamedIndividual IRI="#Intel_Pentium"/>
+            <NamedIndividual IRI="#Digital_Equipment_Corporation_V-11"/>
+            <NamedIndividual IRI="#ISRO_Vikram_1601"/>
+            <NamedIndividual IRI="#AMD_8088"/>
+            <NamedIndividual IRI="#Atmel_AVR32"/>
+            <NamedIndividual IRI="#AMD_29027"/>
+            <NamedIndividual IRI="#Intel_80386SX"/>
+            <NamedIndividual IRI="#AMD_Interlagos_Opteron"/>
+            <NamedIndividual IRI="#Digital_Equipment_Corporation_MicroVAX_78032"/>
+            <NamedIndividual IRI="#Intel_MCS-96"/>
+            <NamedIndividual IRI="#Intel_Pentium_II"/>
+            <NamedIndividual IRI="#Texas_Instruments_TMS1100"/>
+            <NamedIndividual IRI="#Western_Design_Center_65C02"/>
+            <NamedIndividual IRI="#IBM_Cell"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-8900"/>
+            <NamedIndividual IRI="#Oracle_Corporation_(formerly_Sun_Microsystems)_SPARC"/>
+            <NamedIndividual IRI="#AMD_Athlon_XP-M"/>
+            <NamedIndividual IRI="#IBM_A30"/>
+            <NamedIndividual IRI="#Intel_80386SL"/>
+            <NamedIndividual IRI="#NEC_µPD780C"/>
+            <NamedIndividual IRI="#VIA_Eden"/>
+            <NamedIndividual IRI="#AMD_Mobile_Athlon_4"/>
+            <NamedIndividual IRI="#Digital_Equipment_Corporation_Mariah"/>
+            <NamedIndividual IRI="#IBM_zEC12"/>
+            <NamedIndividual IRI="#Intel_Core_i7"/>
+            <NamedIndividual IRI="#AMD_Turion_64"/>
+            <NamedIndividual IRI="#AMD_29030"/>
+            <NamedIndividual IRI="#Intel_Core_i3"/>
+            <NamedIndividual IRI="#Digital_Equipment_Corporation_StrongARM"/>
+            <NamedIndividual IRI="#Intel_80151"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DragonBall"/>
+            <NamedIndividual IRI="#Intel_8085"/>
+            <NamedIndividual IRI="#Intel_Core_i5"/>
+            <NamedIndividual IRI="#Intel_8086"/>
+            <NamedIndividual IRI="#Intel_8088"/>
+            <NamedIndividual IRI="#Zilog_Z80000"/>
+            <NamedIndividual IRI="#AMD_Am2901"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8256"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP563XX"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8254"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8252"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8251"/>
+            <NamedIndividual IRI="#AMD_(Excavator_core)"/>
+            <NamedIndividual IRI="#ARM_ARM"/>
+            <NamedIndividual IRI="#AMD_Turion_II"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R4000"/>
+            <NamedIndividual IRI="#NEC_μPD708"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8154-E"/>
+            <NamedIndividual IRI="#NEC_μPD707"/>
+            <NamedIndividual IRI="#AMD_K6-2-P"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-7200"/>
+            <NamedIndividual IRI="#Intel_80286"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68060"/>
+            <NamedIndividual IRI="#AMD_Athlon_XP"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_88100"/>
+            <NamedIndividual IRI="#AMD_Athlon_X2"/>
+            <NamedIndividual IRI="#IBM_z10"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68851"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_ColdFire"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC57xx"/>
+            <NamedIndividual IRI="#AMD_Am486"/>
+            <NamedIndividual IRI="#Intel_8080"/>
+            <NamedIndividual IRI="#IBM_z13"/>
+            <NamedIndividual IRI="#IBM_A10"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_S08"/>
+            <NamedIndividual IRI="#Elbrus_Elbrus_2K"/>
+            <NamedIndividual IRI="#Western_Digital_MCP-1600"/>
+            <NamedIndividual IRI="#OpenCores_OpenRISC"/>
+            <NamedIndividual IRI="#National_Semiconductor_NS320xx"/>
+            <NamedIndividual IRI="#Intel_Core"/>
+            <NamedIndividual IRI="#Fairchild_Semiconductor_Clipper"/>
+            <NamedIndividual IRI="#Intel_i860_a.k.a._80860"/>
+            <NamedIndividual IRI="#Intel_Core_2"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC83xx"/>
+            <NamedIndividual IRI="#AMD_K5"/>
+            <NamedIndividual IRI="#AMD_K6"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC5554"/>
+            <NamedIndividual IRI="#IBM_801"/>
+            <NamedIndividual IRI="#Zilog_Z180"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MCF5232,_MCF5233,_MCF5234,_MCF5235"/>
+            <NamedIndividual IRI="#AMD_Summit_Ridge_Ryzen"/>
+            <NamedIndividual IRI="#AMD_Mobile_Sempron"/>
+            <NamedIndividual IRI="#IBM_A25"/>
+            <NamedIndividual IRI="#NEC_μPD700"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC5777C"/>
+            <NamedIndividual IRI="#AMD_Athlon_64_FX"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP566XX"/>
+            <NamedIndividual IRI="#AMD_Phenom_II"/>
+            <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21364"/>
+            <NamedIndividual IRI="#Intel_Pentium_4_EE"/>
+            <NamedIndividual IRI="#Intel_8051"/>
+            <NamedIndividual IRI="#Intel_80186"/>
+            <NamedIndividual IRI="#AMD_Athlon_64_X2"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68881"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-7100"/>
+            <NamedIndividual IRI="#Intel_80188"/>
+            <NamedIndividual IRI="#NEC_V80"/>
+            <NamedIndividual IRI="#Intel_Xeon"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R12000"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC56xx"/>
+            <NamedIndividual IRI="#NEC_V70"/>
+            <NamedIndividual IRI="#IBM_Broadway"/>
+            <NamedIndividual IRI="#AMD_Am386"/>
+            <NamedIndividual IRI="#Hewlett-Packard_FOCUS_32-bit"/>
+            <NamedIndividual IRI="#NEC_µPD765"/>
+            <NamedIndividual IRI="#Sunway_SW-1"/>
+            <NamedIndividual IRI="#Intel_Pentium_Pro"/>
+            <NamedIndividual IRI="#Sunway_SW-2"/>
+            <NamedIndividual IRI="#Sunway_SW-3"/>
+            <NamedIndividual IRI="#Hewlett-Packard_Capricorn"/>
+            <NamedIndividual IRI="#Intel_8048"/>
+            <NamedIndividual IRI="#NEC_µPD7720"/>
+            <NamedIndividual IRI="#Intel_Pentium_III_Tualatin-based"/>
+            <NamedIndividual IRI="#AMD_Opteron"/>
+            <NamedIndividual IRI="#AMD_Turion_64_X2"/>
+            <NamedIndividual IRI="#AMD_Vishera"/>
+            <NamedIndividual IRI="#Intel_4004"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC82xx"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PowerPC_7xx"/>
+            <NamedIndividual IRI="#Intel_iAPX_432"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_88110"/>
+            <NamedIndividual IRI="#Zilog_Z280"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68882"/>
+            <NamedIndividual IRI="#AMD_Athlon_64"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC5xx"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R10000"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP567XX"/>
+            <NamedIndividual IRI="#IBM_RS64"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8156-E"/>
+            <NamedIndividual IRI="#IBM_POWER5"/>
+            <NamedIndividual IRI="#AMD_Am5x86"/>
+            <NamedIndividual IRI="#IBM_POWER4"/>
+            <NamedIndividual IRI="#IBM_POWER3"/>
+            <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21264"/>
+            <NamedIndividual IRI="#IBM_POWER2"/>
+            <NamedIndividual IRI="#IBM_POWER1"/>
+            <NamedIndividual IRI="#RCA_1802"/>
+            <NamedIndividual IRI="#Western_Design_Center_65802"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_603ev"/>
+            <NamedIndividual IRI="#Fairchild_Semiconductor_F8"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68020"/>
+            <NamedIndividual IRI="#NEC_V50"/>
+            <NamedIndividual IRI="#Digital_Equipment_Corporation_CVAX"/>
+            <NamedIndividual IRI="#Inmos_Transputer_T2"/>
+            <NamedIndividual IRI="#Intel_Pentium_II_and_III_Xeon"/>
+            <NamedIndividual IRI="#Inmos_Transputer_T4"/>
+            <NamedIndividual IRI="#Lattice_Semiconductor_LatticeMico8"/>
+            <NamedIndividual IRI="#AMD_Am286"/>
+            <NamedIndividual IRI="#Intel_Pentium_with_MMX_Technology"/>
+            <NamedIndividual IRI="#IBM_RISC"/>
+            <NamedIndividual IRI="#Digital_Equipment_Corporation_NVAX"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R3000"/>
+            <NamedIndividual IRI="#Intel_80486SL"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68030"/>
+            <NamedIndividual IRI="#AMD_Zambezi"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-8600"/>
+            <NamedIndividual IRI="#Inmos_Transputer_T8"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8144-E"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC85xx"/>
+            <NamedIndividual IRI="#AMD_(Steamroller_core)"/>
+            <NamedIndividual IRI="#NXP_(former_Philips_Semiconductors)_Signetics_2650"/>
+            <NamedIndividual IRI="#Intel_Pentium_4F"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_683XX"/>
+            <NamedIndividual IRI="#AMD_Sempron"/>
+            <NamedIndividual IRI="#Intel_80486SX"/>
+            <NamedIndividual IRI="#NEC_V60"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MC68832"/>
+            <NamedIndividual IRI="#IBM_POWER8"/>
+            <NamedIndividual IRI="#IBM_POWER7"/>
+            <NamedIndividual IRI="#IBM_POWER6"/>
+            <NamedIndividual IRI="#NEC_µPD765A"/>
+            <NamedIndividual IRI="#AMD_K6-2+"/>
+            <NamedIndividual IRI="#Intel_Pentium_III"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R8000"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC8xx"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MXC300-30"/>
+            <NamedIndividual IRI="#Atmel_AVR"/>
+            <NamedIndividual IRI="#Renesas_Electronics_M32R"/>
+            <NamedIndividual IRI="#Intel_Pentium_4E"/>
+            <NamedIndividual IRI="#AMD_K6-III-P"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R2000"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP568XX"/>
+            <NamedIndividual IRI="#IBM_RS64-III"/>
+            <NamedIndividual IRI="#Zilog_Z800"/>
+            <NamedIndividual IRI="#AMD_K6-III+"/>
+            <NamedIndividual IRI="#Digital_Equipment_Corporation_Rigel"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R16000"/>
+            <NamedIndividual IRI="#Texas_Instruments_TMS9900"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68040"/>
+            <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21164"/>
+            <NamedIndividual IRI="#Intel_Itanium_2"/>
+            <NamedIndividual IRI="#Intel_3000"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_i.MX1"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MC1080_800"/>
+            <NamedIndividual IRI="#Altera_Nios"/>
+            <NamedIndividual IRI="#Intel_i960_a.k.a._80960"/>
+            <NamedIndividual IRI="#NEC_V33"/>
+            <NamedIndividual IRI="#AMD_Athlon_II"/>
+            <NamedIndividual IRI="#NEC_V30"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP96XXX"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68HC11"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_146805"/>
+            <NamedIndividual IRI="#Intel_80486DX"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68HC05"/>
+            <NamedIndividual IRI="#Toshiba_Cell"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68HC08"/>
+            <NamedIndividual IRI="#MOS_Technology_6502"/>
+            <NamedIndividual IRI="#Intel_8008"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-8500"/>
+            <NamedIndividual IRI="#IBM_RS64-II"/>
+            <NamedIndividual IRI="#Xilinx_PicoBlaze"/>
+            <NamedIndividual IRI="#Intel_Original_Pentium"/>
+            <NamedIndividual IRI="#Western_Design_Center_65816"/>
+            <NamedIndividual IRI="#Xilinx_MicroBlaze"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_i.MXS"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MC14500B_Industrial_Control_Unit"/>
+            <NamedIndividual IRI="#Intel_Dual-Core_Xeon_LV"/>
+            <NamedIndividual IRI="#NEC_V40"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_i.MXL"/>
+            <NamedIndividual IRI="#NEC_µPD780C-1"/>
+            <NamedIndividual IRI="#AMD_G-Series"/>
+            <NamedIndividual IRI="#IBM_z196"/>
+            <NamedIndividual IRI="#VIA_VIA"/>
+            <NamedIndividual IRI="#IBM_RS64-IV"/>
+            <NamedIndividual IRI="#Fairchild_Semiconductor_9440"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-7300LC"/>
+            <NamedIndividual IRI="#Sunway_SW26010"/>
+            <NamedIndividual IRI="#Toshiba_TLCS-12"/>
+            <NamedIndividual IRI="#AMD_29005"/>
+            <NamedIndividual IRI="#AMD_Temash"/>
+            <NamedIndividual IRI="#Intel_XScale"/>
+            <NamedIndividual IRI="#AMD_Am2909"/>
+            <NamedIndividual IRI="#AMD_Am2908"/>
+            <NamedIndividual IRI="#AMD_Am2907"/>
+            <NamedIndividual IRI="#AMD_Am2906"/>
+            <NamedIndividual IRI="#AMD_Am2905"/>
+            <NamedIndividual IRI="#AMD_29000"/>
+            <NamedIndividual IRI="#AMD_Am2904"/>
+            <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21064"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R14000"/>
+            <NamedIndividual IRI="#AMD_Am2903"/>
+            <NamedIndividual IRI="#AMD_Am2902"/>
+            <NamedIndividual IRI="#AMD_Am2912"/>
+            <NamedIndividual IRI="#AMD_Am2911"/>
+            <NamedIndividual IRI="#XMOS_XCore_XS1"/>
+            <NamedIndividual IRI="#AMD_Am2910"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC512x"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-8800"/>
+            <NamedIndividual IRI="#AMD_Mobile_Athlon_XP"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_Pxxxx"/>
+            <NamedIndividual IRI="#Data_General_microNOVA_mN602"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-7150"/>
+            <NamedIndividual IRI="#AMD_Ontario"/>
+            <NamedIndividual IRI="#NEC_µPD7220"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_620"/>
+            <NamedIndividual IRI="#AMD_Am2914"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC87xx"/>
+            <NamedIndividual IRI="#AMD_Am2913"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-8000"/>
+            <NamedIndividual IRI="#NEC_V20"/>
+            <NamedIndividual IRI="#NEC_V25"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP560XX"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8152"/>
+            <NamedIndividual IRI="#Intel_80486DX4"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8151"/>
+            <NamedIndividual IRI="#Intel_80486DX2"/>
+            <NamedIndividual IRI="#Intel_Mobile_Pentium_4-M"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R4400"/>
+            <NamedIndividual IRI="#NEC_µPD77C25"/>
+            <NamedIndividual IRI="#MIPS_Technologies_R6000"/>
+            <NamedIndividual IRI="#AMD_Mobile_Athlon_64"/>
+            <NamedIndividual IRI="#Altera_Nios_II"/>
+            <NamedIndividual IRI="#Intel_Celeron_M"/>
+            <NamedIndividual IRI="#Hewlett-Packard_Saturn_Nibble"/>
+            <NamedIndividual IRI="#Intel_Pentium_Extreme_Edition"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68000"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC52xx"/>
+            <NamedIndividual IRI="#NEC_µPD96050"/>
+            <NamedIndividual IRI="#AMD_Kyoto"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_RS08"/>
+            <NamedIndividual IRI="#Intel_Itanium"/>
+            <NamedIndividual IRI="#Hewlett-Packard_PA-8700"/>
+            <NamedIndividual IRI="#Intel_Pentium_M"/>
+            <NamedIndividual IRI="#AMD_Duron"/>
+            <NamedIndividual IRI="#AMD_Athlon_MP"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_Txxxx"/>
+            <NamedIndividual IRI="#Intel_Pentium_D"/>
+            <NamedIndividual IRI="#Data_General_microNOVA_mN601"/>
+            <NamedIndividual IRI="#AMD_Mobile_Duron"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6805"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6804"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6803"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6802"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6801"/>
+            <NamedIndividual IRI="#AMD_Zacate"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6800"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_603"/>
+            <NamedIndividual IRI="#AMD_Athlon"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_604"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68012"/>
+            <NamedIndividual IRI="#Intel_Pentium_4"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68010"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6809"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_601"/>
+            <NamedIndividual IRI="#AMD_Kabini"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6808"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC86xx"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68008"/>
+            <NamedIndividual IRI="#Western_Electric_WE-32000"/>
+            <NamedIndividual IRI="#NEC_R4200"/>
+            <NamedIndividual IRI="#Intel_Pentium_Dual-Core"/>
+            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8101-3"/>
+            <NamedIndividual IRI="#Intel_80386EX"/>
+            <NamedIndividual IRI="#NVIDIA_Tegra"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Distribution"/>
         <ObjectOneOf>
             <NamedIndividual IRI="#Baltix"/>
@@ -4554,422 +4976,6 @@ environment perspective?</Literal>
             <NamedIndividual IRI="#Fujitsu"/>
         </ObjectOneOf>
     </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#ProcessorArchitecture"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="#AP-101"/>
-            <NamedIndividual IRI="#eSi-RISC"/>
-            <NamedIndividual IRI="#UNIVAC_1100-2200_series"/>
-            <NamedIndividual IRI="#x86"/>
-            <NamedIndividual IRI="#XScale"/>
-            <NamedIndividual IRI="#6800"/>
-            <NamedIndividual IRI="#SPARC"/>
-            <NamedIndividual IRI="#PowerPC"/>
-            <NamedIndividual IRI="#Cell"/>
-            <NamedIndividual IRI="#POWER"/>
-            <NamedIndividual IRI="#Itanium"/>
-            <NamedIndividual IRI="#Renesas"/>
-            <NamedIndividual IRI="#Transputer"/>
-            <NamedIndividual IRI="#PIC"/>
-            <NamedIndividual IRI="#x86-64"/>
-            <NamedIndividual IRI="#Parallax_Propeller"/>
-            <NamedIndividual IRI="#65816"/>
-            <NamedIndividual IRI="#VAX"/>
-            <NamedIndividual IRI="#Power"/>
-            <NamedIndividual IRI="#MSP430"/>
-            <NamedIndividual IRI="#EDSAC"/>
-            <NamedIndividual IRI="#Milkymist"/>
-            <NamedIndividual IRI="#SuperH"/>
-            <NamedIndividual IRI="#z-Architecture"/>
-            <NamedIndividual IRI="#PDP-11"/>
-            <NamedIndividual IRI="#RX_CPU"/>
-            <NamedIndividual IRI="#StrongARM"/>
-            <NamedIndividual IRI="#AMD64"/>
-            <NamedIndividual IRI="#PDP-8"/>
-            <NamedIndividual IRI="#Alpha"/>
-            <NamedIndividual IRI="#Apollo_Guidance_Computer"/>
-            <NamedIndividual IRI="#PA-RISC"/>
-            <NamedIndividual IRI="#6502"/>
-            <NamedIndividual IRI="#ETRAX_CRIS"/>
-            <NamedIndividual IRI="#System-370"/>
-            <NamedIndividual IRI="#68000"/>
-            <NamedIndividual IRI="#ARM64"/>
-            <NamedIndividual IRI="#Loongson"/>
-            <NamedIndividual IRI="#8051"/>
-            <NamedIndividual IRI="#Burroughs_large_systems"/>
-            <NamedIndividual IRI="#MIL-STD-1750"/>
-            <NamedIndividual IRI="#MIL-STD-1750A"/>
-            <NamedIndividual IRI="#ESA-390"/>
-            <NamedIndividual IRI="#Intel_64"/>
-            <NamedIndividual IRI="#Z80"/>
-            <NamedIndividual IRI="#Intel_4004"/>
-            <NamedIndividual IRI="#IA-32"/>
-            <NamedIndividual IRI="#System-360"/>
-            <NamedIndividual IRI="#ARM"/>
-            <NamedIndividual IRI="#AVR"/>
-            <NamedIndividual IRI="#MIPS"/>
-            <NamedIndividual IRI="#Unisys"/>
-        </ObjectOneOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#ProcessorType"/>
-        <ObjectOneOf>
-            <NamedIndividual IRI="#AMD_Phenom_X4"/>
-            <NamedIndividual IRI="#AMD_292xx"/>
-            <NamedIndividual IRI="#AMD_Phenom_X3"/>
-            <NamedIndividual IRI="#Lattice_Semiconductor_LatticeMico32"/>
-            <NamedIndividual IRI="#IBM_P2SC"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R18000"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-7000"/>
-            <NamedIndividual IRI="#Texas_Instruments_TMS1000"/>
-            <NamedIndividual IRI="#VIA_C3"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC55xx"/>
-            <NamedIndividual IRI="#Emotion_Engine_by_Sony__and__Toshiba_Emotion_Engine"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC711x"/>
-            <NamedIndividual IRI="#Zilog_Z80"/>
-            <NamedIndividual IRI="#Intel_80386DX"/>
-            <NamedIndividual IRI="#NEC_μCOM-4"/>
-            <NamedIndividual IRI="#AMD_Phenom_FX"/>
-            <NamedIndividual IRI="#Hitachi_SuperH_SH-2"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_ColdFire+"/>
-            <NamedIndividual IRI="#Hitachi_SuperH_SH-1"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8102"/>
-            <NamedIndividual IRI="#Intel_Celeron"/>
-            <NamedIndividual IRI="#Apollo_PRISM"/>
-            <NamedIndividual IRI="#EnSilica_eSI-RISC"/>
-            <NamedIndividual IRI="#Sunway_SW1600"/>
-            <NamedIndividual IRI="#VIA_C7"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-7100LC"/>
-            <NamedIndividual IRI="#National_Semiconductor_SC-MP"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R3000A"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8122-26"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC"/>
-            <NamedIndividual IRI="#NEC_V850"/>
-            <NamedIndividual IRI="#Intel_80251"/>
-            <NamedIndividual IRI="#Intersil_6100"/>
-            <NamedIndividual IRI="#Zilog_Z8000"/>
-            <NamedIndividual IRI="#AMD_29050"/>
-            <NamedIndividual IRI="#Intel_80376"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-8200"/>
-            <NamedIndividual IRI="#Texas_Instruments_TMS7000"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_604e"/>
-            <NamedIndividual IRI="#AMD_8086"/>
-            <NamedIndividual IRI="#Intel_Pentium"/>
-            <NamedIndividual IRI="#Digital_Equipment_Corporation_V-11"/>
-            <NamedIndividual IRI="#ISRO_Vikram_1601"/>
-            <NamedIndividual IRI="#AMD_8088"/>
-            <NamedIndividual IRI="#Atmel_AVR32"/>
-            <NamedIndividual IRI="#AMD_29027"/>
-            <NamedIndividual IRI="#Intel_80386SX"/>
-            <NamedIndividual IRI="#AMD_Interlagos_Opteron"/>
-            <NamedIndividual IRI="#Digital_Equipment_Corporation_MicroVAX_78032"/>
-            <NamedIndividual IRI="#Intel_MCS-96"/>
-            <NamedIndividual IRI="#Intel_Pentium_II"/>
-            <NamedIndividual IRI="#Texas_Instruments_TMS1100"/>
-            <NamedIndividual IRI="#Western_Design_Center_65C02"/>
-            <NamedIndividual IRI="#IBM_Cell"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-8900"/>
-            <NamedIndividual IRI="#Oracle_Corporation_(formerly_Sun_Microsystems)_SPARC"/>
-            <NamedIndividual IRI="#AMD_Athlon_XP-M"/>
-            <NamedIndividual IRI="#IBM_A30"/>
-            <NamedIndividual IRI="#Intel_80386SL"/>
-            <NamedIndividual IRI="#NEC_µPD780C"/>
-            <NamedIndividual IRI="#VIA_Eden"/>
-            <NamedIndividual IRI="#AMD_Mobile_Athlon_4"/>
-            <NamedIndividual IRI="#Digital_Equipment_Corporation_Mariah"/>
-            <NamedIndividual IRI="#IBM_zEC12"/>
-            <NamedIndividual IRI="#Intel_Core_i7"/>
-            <NamedIndividual IRI="#AMD_Turion_64"/>
-            <NamedIndividual IRI="#AMD_29030"/>
-            <NamedIndividual IRI="#Intel_Core_i3"/>
-            <NamedIndividual IRI="#Digital_Equipment_Corporation_StrongARM"/>
-            <NamedIndividual IRI="#Intel_80151"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DragonBall"/>
-            <NamedIndividual IRI="#Intel_8085"/>
-            <NamedIndividual IRI="#Intel_Core_i5"/>
-            <NamedIndividual IRI="#Intel_8086"/>
-            <NamedIndividual IRI="#Intel_8088"/>
-            <NamedIndividual IRI="#Zilog_Z80000"/>
-            <NamedIndividual IRI="#AMD_Am2901"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8256"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP563XX"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8254"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8252"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8251"/>
-            <NamedIndividual IRI="#AMD_(Excavator_core)"/>
-            <NamedIndividual IRI="#ARM_ARM"/>
-            <NamedIndividual IRI="#AMD_Turion_II"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R4000"/>
-            <NamedIndividual IRI="#NEC_μPD708"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8154-E"/>
-            <NamedIndividual IRI="#NEC_μPD707"/>
-            <NamedIndividual IRI="#AMD_K6-2-P"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-7200"/>
-            <NamedIndividual IRI="#Intel_80286"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68060"/>
-            <NamedIndividual IRI="#AMD_Athlon_XP"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_88100"/>
-            <NamedIndividual IRI="#AMD_Athlon_X2"/>
-            <NamedIndividual IRI="#IBM_z10"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68851"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_ColdFire"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC57xx"/>
-            <NamedIndividual IRI="#AMD_Am486"/>
-            <NamedIndividual IRI="#Intel_8080"/>
-            <NamedIndividual IRI="#IBM_z13"/>
-            <NamedIndividual IRI="#IBM_A10"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_S08"/>
-            <NamedIndividual IRI="#Elbrus_Elbrus_2K"/>
-            <NamedIndividual IRI="#Western_Digital_MCP-1600"/>
-            <NamedIndividual IRI="#OpenCores_OpenRISC"/>
-            <NamedIndividual IRI="#National_Semiconductor_NS320xx"/>
-            <NamedIndividual IRI="#Intel_Core"/>
-            <NamedIndividual IRI="#Fairchild_Semiconductor_Clipper"/>
-            <NamedIndividual IRI="#Intel_i860_a.k.a._80860"/>
-            <NamedIndividual IRI="#Intel_Core_2"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC83xx"/>
-            <NamedIndividual IRI="#AMD_K5"/>
-            <NamedIndividual IRI="#AMD_K6"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC5554"/>
-            <NamedIndividual IRI="#IBM_801"/>
-            <NamedIndividual IRI="#Zilog_Z180"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MCF5232,_MCF5233,_MCF5234,_MCF5235"/>
-            <NamedIndividual IRI="#AMD_Summit_Ridge_Ryzen"/>
-            <NamedIndividual IRI="#AMD_Mobile_Sempron"/>
-            <NamedIndividual IRI="#IBM_A25"/>
-            <NamedIndividual IRI="#NEC_μPD700"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC5777C"/>
-            <NamedIndividual IRI="#AMD_Athlon_64_FX"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP566XX"/>
-            <NamedIndividual IRI="#AMD_Phenom_II"/>
-            <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21364"/>
-            <NamedIndividual IRI="#Intel_Pentium_4_EE"/>
-            <NamedIndividual IRI="#Intel_8051"/>
-            <NamedIndividual IRI="#Intel_80186"/>
-            <NamedIndividual IRI="#AMD_Athlon_64_X2"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68881"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-7100"/>
-            <NamedIndividual IRI="#Intel_80188"/>
-            <NamedIndividual IRI="#NEC_V80"/>
-            <NamedIndividual IRI="#Intel_Xeon"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R12000"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC56xx"/>
-            <NamedIndividual IRI="#NEC_V70"/>
-            <NamedIndividual IRI="#IBM_Broadway"/>
-            <NamedIndividual IRI="#AMD_Am386"/>
-            <NamedIndividual IRI="#Hewlett-Packard_FOCUS_32-bit"/>
-            <NamedIndividual IRI="#NEC_µPD765"/>
-            <NamedIndividual IRI="#Sunway_SW-1"/>
-            <NamedIndividual IRI="#Intel_Pentium_Pro"/>
-            <NamedIndividual IRI="#Sunway_SW-2"/>
-            <NamedIndividual IRI="#Sunway_SW-3"/>
-            <NamedIndividual IRI="#Hewlett-Packard_Capricorn"/>
-            <NamedIndividual IRI="#Intel_8048"/>
-            <NamedIndividual IRI="#NEC_µPD7720"/>
-            <NamedIndividual IRI="#Intel_Pentium_III_Tualatin-based"/>
-            <NamedIndividual IRI="#AMD_Opteron"/>
-            <NamedIndividual IRI="#AMD_Turion_64_X2"/>
-            <NamedIndividual IRI="#AMD_Vishera"/>
-            <NamedIndividual IRI="#Intel_4004"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC82xx"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PowerPC_7xx"/>
-            <NamedIndividual IRI="#Intel_iAPX_432"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_88110"/>
-            <NamedIndividual IRI="#Zilog_Z280"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68882"/>
-            <NamedIndividual IRI="#AMD_Athlon_64"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC5xx"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R10000"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP567XX"/>
-            <NamedIndividual IRI="#IBM_RS64"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8156-E"/>
-            <NamedIndividual IRI="#IBM_POWER5"/>
-            <NamedIndividual IRI="#AMD_Am5x86"/>
-            <NamedIndividual IRI="#IBM_POWER4"/>
-            <NamedIndividual IRI="#IBM_POWER3"/>
-            <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21264"/>
-            <NamedIndividual IRI="#IBM_POWER2"/>
-            <NamedIndividual IRI="#IBM_POWER1"/>
-            <NamedIndividual IRI="#RCA_1802"/>
-            <NamedIndividual IRI="#Western_Design_Center_65802"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_603ev"/>
-            <NamedIndividual IRI="#Fairchild_Semiconductor_F8"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68020"/>
-            <NamedIndividual IRI="#NEC_V50"/>
-            <NamedIndividual IRI="#Digital_Equipment_Corporation_CVAX"/>
-            <NamedIndividual IRI="#Inmos_Transputer_T2"/>
-            <NamedIndividual IRI="#Intel_Pentium_II_and_III_Xeon"/>
-            <NamedIndividual IRI="#Inmos_Transputer_T4"/>
-            <NamedIndividual IRI="#Lattice_Semiconductor_LatticeMico8"/>
-            <NamedIndividual IRI="#AMD_Am286"/>
-            <NamedIndividual IRI="#Intel_Pentium_with_MMX_Technology"/>
-            <NamedIndividual IRI="#IBM_RISC"/>
-            <NamedIndividual IRI="#Digital_Equipment_Corporation_NVAX"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R3000"/>
-            <NamedIndividual IRI="#Intel_80486SL"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68030"/>
-            <NamedIndividual IRI="#AMD_Zambezi"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-8600"/>
-            <NamedIndividual IRI="#Inmos_Transputer_T8"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8144-E"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC85xx"/>
-            <NamedIndividual IRI="#AMD_(Steamroller_core)"/>
-            <NamedIndividual IRI="#NXP_(former_Philips_Semiconductors)_Signetics_2650"/>
-            <NamedIndividual IRI="#Intel_Pentium_4F"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_683XX"/>
-            <NamedIndividual IRI="#AMD_Sempron"/>
-            <NamedIndividual IRI="#Intel_80486SX"/>
-            <NamedIndividual IRI="#NEC_V60"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MC68832"/>
-            <NamedIndividual IRI="#IBM_POWER8"/>
-            <NamedIndividual IRI="#IBM_POWER7"/>
-            <NamedIndividual IRI="#IBM_POWER6"/>
-            <NamedIndividual IRI="#NEC_µPD765A"/>
-            <NamedIndividual IRI="#AMD_K6-2+"/>
-            <NamedIndividual IRI="#Intel_Pentium_III"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R8000"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC8xx"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MXC300-30"/>
-            <NamedIndividual IRI="#Atmel_AVR"/>
-            <NamedIndividual IRI="#Renesas_Electronics_M32R"/>
-            <NamedIndividual IRI="#Intel_Pentium_4E"/>
-            <NamedIndividual IRI="#AMD_K6-III-P"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R2000"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP568XX"/>
-            <NamedIndividual IRI="#IBM_RS64-III"/>
-            <NamedIndividual IRI="#Zilog_Z800"/>
-            <NamedIndividual IRI="#AMD_K6-III+"/>
-            <NamedIndividual IRI="#Digital_Equipment_Corporation_Rigel"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R16000"/>
-            <NamedIndividual IRI="#Texas_Instruments_TMS9900"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68040"/>
-            <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21164"/>
-            <NamedIndividual IRI="#Intel_Itanium_2"/>
-            <NamedIndividual IRI="#Intel_3000"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_i.MX1"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MC1080_800"/>
-            <NamedIndividual IRI="#Altera_Nios"/>
-            <NamedIndividual IRI="#Intel_i960_a.k.a._80960"/>
-            <NamedIndividual IRI="#NEC_V33"/>
-            <NamedIndividual IRI="#AMD_Athlon_II"/>
-            <NamedIndividual IRI="#NEC_V30"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP96XXX"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68HC11"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_146805"/>
-            <NamedIndividual IRI="#Intel_80486DX"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68HC05"/>
-            <NamedIndividual IRI="#Toshiba_Cell"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68HC08"/>
-            <NamedIndividual IRI="#MOS_Technology_6502"/>
-            <NamedIndividual IRI="#Intel_8008"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-8500"/>
-            <NamedIndividual IRI="#IBM_RS64-II"/>
-            <NamedIndividual IRI="#Xilinx_PicoBlaze"/>
-            <NamedIndividual IRI="#Intel_Original_Pentium"/>
-            <NamedIndividual IRI="#Western_Design_Center_65816"/>
-            <NamedIndividual IRI="#Xilinx_MicroBlaze"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_i.MXS"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MC14500B_Industrial_Control_Unit"/>
-            <NamedIndividual IRI="#Intel_Dual-Core_Xeon_LV"/>
-            <NamedIndividual IRI="#NEC_V40"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_i.MXL"/>
-            <NamedIndividual IRI="#NEC_µPD780C-1"/>
-            <NamedIndividual IRI="#AMD_G-Series"/>
-            <NamedIndividual IRI="#IBM_z196"/>
-            <NamedIndividual IRI="#VIA_VIA"/>
-            <NamedIndividual IRI="#IBM_RS64-IV"/>
-            <NamedIndividual IRI="#Fairchild_Semiconductor_9440"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-7300LC"/>
-            <NamedIndividual IRI="#Sunway_SW26010"/>
-            <NamedIndividual IRI="#Toshiba_TLCS-12"/>
-            <NamedIndividual IRI="#AMD_29005"/>
-            <NamedIndividual IRI="#AMD_Temash"/>
-            <NamedIndividual IRI="#Intel_XScale"/>
-            <NamedIndividual IRI="#AMD_Am2909"/>
-            <NamedIndividual IRI="#AMD_Am2908"/>
-            <NamedIndividual IRI="#AMD_Am2907"/>
-            <NamedIndividual IRI="#AMD_Am2906"/>
-            <NamedIndividual IRI="#AMD_Am2905"/>
-            <NamedIndividual IRI="#AMD_29000"/>
-            <NamedIndividual IRI="#AMD_Am2904"/>
-            <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21064"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R14000"/>
-            <NamedIndividual IRI="#AMD_Am2903"/>
-            <NamedIndividual IRI="#AMD_Am2902"/>
-            <NamedIndividual IRI="#AMD_Am2912"/>
-            <NamedIndividual IRI="#AMD_Am2911"/>
-            <NamedIndividual IRI="#XMOS_XCore_XS1"/>
-            <NamedIndividual IRI="#AMD_Am2910"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC512x"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-8800"/>
-            <NamedIndividual IRI="#AMD_Mobile_Athlon_XP"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_Pxxxx"/>
-            <NamedIndividual IRI="#Data_General_microNOVA_mN602"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-7150"/>
-            <NamedIndividual IRI="#AMD_Ontario"/>
-            <NamedIndividual IRI="#NEC_µPD7220"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_620"/>
-            <NamedIndividual IRI="#AMD_Am2914"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC87xx"/>
-            <NamedIndividual IRI="#AMD_Am2913"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-8000"/>
-            <NamedIndividual IRI="#NEC_V20"/>
-            <NamedIndividual IRI="#NEC_V25"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP560XX"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8152"/>
-            <NamedIndividual IRI="#Intel_80486DX4"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8151"/>
-            <NamedIndividual IRI="#Intel_80486DX2"/>
-            <NamedIndividual IRI="#Intel_Mobile_Pentium_4-M"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R4400"/>
-            <NamedIndividual IRI="#NEC_µPD77C25"/>
-            <NamedIndividual IRI="#MIPS_Technologies_R6000"/>
-            <NamedIndividual IRI="#AMD_Mobile_Athlon_64"/>
-            <NamedIndividual IRI="#Altera_Nios_II"/>
-            <NamedIndividual IRI="#Intel_Celeron_M"/>
-            <NamedIndividual IRI="#Hewlett-Packard_Saturn_Nibble"/>
-            <NamedIndividual IRI="#Intel_Pentium_Extreme_Edition"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68000"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC52xx"/>
-            <NamedIndividual IRI="#NEC_µPD96050"/>
-            <NamedIndividual IRI="#AMD_Kyoto"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_RS08"/>
-            <NamedIndividual IRI="#Intel_Itanium"/>
-            <NamedIndividual IRI="#Hewlett-Packard_PA-8700"/>
-            <NamedIndividual IRI="#Intel_Pentium_M"/>
-            <NamedIndividual IRI="#AMD_Duron"/>
-            <NamedIndividual IRI="#AMD_Athlon_MP"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_Txxxx"/>
-            <NamedIndividual IRI="#Intel_Pentium_D"/>
-            <NamedIndividual IRI="#Data_General_microNOVA_mN601"/>
-            <NamedIndividual IRI="#AMD_Mobile_Duron"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6805"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6804"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6803"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6802"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6801"/>
-            <NamedIndividual IRI="#AMD_Zacate"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6800"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_603"/>
-            <NamedIndividual IRI="#AMD_Athlon"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_604"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68012"/>
-            <NamedIndividual IRI="#Intel_Pentium_4"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68010"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6809"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_601"/>
-            <NamedIndividual IRI="#AMD_Kabini"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6808"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC86xx"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68008"/>
-            <NamedIndividual IRI="#Western_Electric_WE-32000"/>
-            <NamedIndividual IRI="#NEC_R4200"/>
-            <NamedIndividual IRI="#Intel_Pentium_Dual-Core"/>
-            <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8101-3"/>
-            <NamedIndividual IRI="#Intel_80386EX"/>
-            <NamedIndividual IRI="#NVIDIA_Tegra"/>
-        </ObjectOneOf>
-    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Amount"/>
         <DataSomeValuesFrom>
@@ -4990,6 +4996,52 @@ environment perspective?</Literal>
             <DataProperty IRI="#hasUnit"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CPU"/>
+        <Class IRI="#Processor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CPU"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCPUArchitecture"/>
+            <Class IRI="#CPUArchitecture"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CPU"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCPUType"/>
+            <Class IRI="#CPUType"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CPU"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCPUArchitecture"/>
+            <Class IRI="#CPUArchitecture"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CPU"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCPUType"/>
+            <Class IRI="#CPUType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CPU"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#hasCPUArchitecture"/>
+            <Class IRI="#CPUArchitecture"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CPU"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#hasCPUType"/>
+            <Class IRI="#CPUType"/>
+        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ComputationalEnvironment"/>
@@ -5050,6 +5102,10 @@ environment perspective?</Literal>
             <DataProperty IRI="#hasStringValue"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GPU"/>
+        <Class IRI="#Processor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Hardware"/>
@@ -5187,51 +5243,9 @@ environment perspective?</Literal>
     <SubClassOf>
         <Class IRI="#Processor"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasArchitecture"/>
-            <Class IRI="#ProcessorArchitecture"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Processor"/>
-        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasFrequency"/>
             <Class IRI="#Amount"/>
         </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Processor"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasProcessorType"/>
-            <Class IRI="#ProcessorType"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Processor"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasArchitecture"/>
-            <Class IRI="#ProcessorArchitecture"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Processor"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#hasProcessorType"/>
-            <Class IRI="#ProcessorType"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Processor"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty IRI="#hasArchitecture"/>
-            <Class IRI="#ProcessorArchitecture"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Processor"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty IRI="#hasProcessorType"/>
-            <Class IRI="#ProcessorType"/>
-        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Processor"/>
@@ -5325,10 +5339,10 @@ environment perspective?</Literal>
     </SubClassOf>
     <SubClassOf>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasArchitecture"/>
-            <Class IRI="#ProcessorArchitecture"/>
+            <ObjectProperty IRI="#hasCPUArchitecture"/>
+            <Class IRI="#CPUArchitecture"/>
         </ObjectSomeValuesFrom>
-        <Class IRI="#Processor"/>
+        <Class IRI="#CPU"/>
     </SubClassOf>
     <SubClassOf>
         <ObjectSomeValuesFrom>
@@ -5390,263 +5404,263 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#AIX-ESA"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#AMD64"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_29000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_29005"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_29027"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_29030"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_29050"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_292xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_8086"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_8088"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am286"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2901"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2902"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2903"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2904"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2905"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2906"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2907"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2908"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2909"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2910"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2911"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2912"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2913"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am2914"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am386"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am486"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Am5x86"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Athlon"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Athlon_64"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Athlon_64_FX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Athlon_64_X2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Athlon_II"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Athlon_MP"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Athlon_X2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Athlon_XP"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Athlon_XP-M"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Duron"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_G-Series"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Interlagos_Opteron"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_K5"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_K6"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_K6-2-P"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_K6-III-P"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Kabini"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Kyoto"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Mobile_Athlon_4"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Mobile_Athlon_64"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Mobile_Athlon_XP"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Mobile_Duron"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Mobile_Sempron"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Ontario"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Opteron"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Phenom_FX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Phenom_II"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Phenom_X3"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Phenom_X4"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Sempron"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Summit_Ridge_Ryzen"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Temash"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Turion_64"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Turion_64_X2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Turion_II"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Vishera"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Zacate"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_Zambezi"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -5658,19 +5672,19 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#AOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#AP-101"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#ARM"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#ARM64"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#ARM_ARM"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -5682,7 +5696,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#ARX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#AVR"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -5702,7 +5716,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Allied_Telesis"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Alpha"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -5710,11 +5724,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Alpine_Linux"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Altera_Nios"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Altera_Nios_II"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -5758,11 +5772,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Antergos_Linux"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Apollo_Guidance_Computer"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Apollo_PRISM"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -5822,11 +5836,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#AtheOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Atmel_AVR"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Atmel_AVR32"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -5974,7 +5988,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Burroughs_MCP"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Burroughs_large_systems"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6086,7 +6100,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#CatOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Cell"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6322,11 +6336,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Darwin"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Data_General_microNOVA_mN601"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Data_General_microNOVA_mN602"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6366,47 +6380,47 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#DexOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21064"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21164"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21264"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Digital_Equipment_Corporation_Alpha_21364"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Digital_Equipment_Corporation_CVAX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Digital_Equipment_Corporation_Mariah"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Digital_Equipment_Corporation_MicroVAX_78032"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Digital_Equipment_Corporation_NVAX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Digital_Equipment_Corporation_Rigel"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Digital_Equipment_Corporation_StrongARM"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Digital_Equipment_Corporation_V-11"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6434,7 +6448,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Dynix"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#EDSAC"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6466,7 +6480,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#EROS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#ESA-390"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6474,7 +6488,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#ES_EVM"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#ETRAX_CRIS"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6506,7 +6520,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Edubuntu"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Elbrus_Elbrus_2K"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6538,7 +6552,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Emmabuntüs"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Emotion_Engine_by_Sony__and__Toshiba_Emotion_Engine"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6550,7 +6564,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#EnGarde_Secure_Linux"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#EnSilica_eSI-RISC"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6586,15 +6600,15 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Fabric_OS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Fairchild_Semiconductor_9440"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Fairchild_Semiconductor_Clipper"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Fairchild_Semiconductor_F8"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6810,67 +6824,67 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#HeliOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_Capricorn"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_FOCUS_32-bit"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-7000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-7100"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-7100LC"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-7150"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-7200"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-7300LC"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-8000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-8200"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-8500"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-8600"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-8700"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-8800"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_PA-8900"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hewlett-Packard_Saturn_Nibble"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6878,11 +6892,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Hikarunix"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hitachi_SuperH_SH-1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Hitachi_SuperH_SH-2"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6894,7 +6908,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#House"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#IA-32"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6910,83 +6924,83 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#IBM_4690_OS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_801"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_A10"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_A25"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_A30"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_Broadway"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_Cell"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_P2SC"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_POWER1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_POWER2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_POWER3"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_POWER4"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_POWER5"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_POWER6"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_POWER7"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_POWER8"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_RISC"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_RS64"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_RS64-II"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_RS64-III"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_RS64-IV"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -6998,19 +7012,19 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#IBM_i"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_z10"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_z13"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_z196"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#IBM_zEC12"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7062,7 +7076,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#ISIS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#ISRO_Vikram_1601"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7082,15 +7096,15 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Inferno"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Inmos_Transputer_T2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Inmos_Transputer_T4"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Inmos_Transputer_T8"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7098,239 +7112,239 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Instant_WebKiosk"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_3000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Intel_4004"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_4004"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Intel_64"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_8008"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80151"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80186"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80188"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80251"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80286"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80376"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80386DX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80386EX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80386SL"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80386SX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_8048"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80486DX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80486DX2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80486DX4"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80486SL"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_80486SX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_8051"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_8080"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_8085"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_8086"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_8088"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Celeron"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Celeron_M"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Core"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Core_2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Core_i3"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Core_i5"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Core_i7"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Dual-Core_Xeon_LV"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Itanium"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Itanium_2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_MCS-96"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Mobile_Pentium_4-M"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Original_Pentium"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_4"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_4E"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_4F"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_4_EE"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_D"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_Dual-Core"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_Extreme_Edition"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_II"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_III"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_III_Tualatin-based"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_II_and_III_Xeon"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_M"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_Pro"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Pentium_with_MMX_Technology"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_XScale"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_Xeon"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_i860_a.k.a._80860"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_i960_a.k.a._80960"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intel_iAPX_432"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7338,7 +7352,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Interactive_Unix"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Intersil_6100"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7346,7 +7360,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Iskolinux"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Itanium"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7470,11 +7484,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#LSE-OS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Lattice_Semiconductor_LatticeMico32"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Lattice_Semiconductor_LatticeMico8"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7526,7 +7540,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#LliureX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Loongson"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7570,11 +7584,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#MFT_II"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#MIL-STD-1750"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#MIL-STD-1750A"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7582,55 +7596,55 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#MINIX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#MIPS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R10000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R12000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R14000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R16000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R18000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R2000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R3000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R3000A"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R4000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R4400"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R6000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MIPS_Technologies_R8000"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7642,7 +7656,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#MOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#MOS_Technology_6502"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7674,7 +7688,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#MS-DOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#MSP430"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7770,7 +7784,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Midori"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Milkymist"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7854,63 +7868,63 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#NCOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_R4200"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_V20"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_V25"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_V30"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_V33"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_V40"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_V50"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_V60"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_V70"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_V80"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_V850"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_μCOM-4"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_μPD700"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_μPD707"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_μPD708"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -7922,15 +7936,15 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#NOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NVIDIA_Tegra"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#National_Semiconductor_NS320xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#National_Semiconductor_SC-MP"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8098,7 +8112,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#OpenBSD"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#OpenCores_OpenRISC"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8158,7 +8172,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Oracle_Linux"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#PA-RISC"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8178,11 +8192,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#PC_DOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#PDP-11"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#PDP-8"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8194,11 +8208,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#PERQ"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#PIC"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#POWER"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8238,7 +8252,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Parabola_GNU-Linux-libre"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Parallax_Propeller"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8338,11 +8352,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Poseidon_Linux"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Power"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#PowerPC"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8374,7 +8388,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Qubes_OS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#RCA_1802"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8454,7 +8468,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#RXART"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#RX_CPU"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8494,11 +8508,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Remix_OS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Renesas"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Renesas_Electronics_M32R"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8570,7 +8584,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#SOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#SPARC"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8726,7 +8740,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Stratus_VOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#StrongARM"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8742,23 +8756,23 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Sunwah_Linux"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Sunway_SW-1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Sunway_SW-2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Sunway_SW-3"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Sunway_SW1600"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Sunway_SW26010"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8766,7 +8780,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#SuperGamer"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#SuperH"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8798,15 +8812,15 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Symphony_OS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#System-360"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Kernel"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#System-370"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#Kernel"/>
         <NamedIndividual IRI="#System-370"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8898,19 +8912,19 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#TempleOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Texas_Instruments_TMS1000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Texas_Instruments_TMS1100"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Texas_Instruments_TMS7000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Texas_Instruments_TMS9900"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8974,11 +8988,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Toshiba_4690_OS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Toshiba_Cell"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Toshiba_TLCS-12"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -8986,7 +9000,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Towns_OS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Transputer"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9034,7 +9048,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#UMES"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#UNIVAC_1100-2200_series"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9130,7 +9144,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Unicos"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Unisys"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9186,23 +9200,23 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#V"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#VAX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#VIA_C3"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#VIA_C7"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#VIA_Eden"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#VIA_VIA"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9298,23 +9312,23 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Webconverger"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Western_Design_Center_65802"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Western_Design_Center_65816"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Western_Design_Center_65C02"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Western_Digital_MCP-1600"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Western_Electric_WE-32000"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9518,11 +9532,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#X-windowing"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#XMOS_XCore_XS1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#XScale"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9558,11 +9572,11 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Xenix"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Xilinx_MicroBlaze"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Xilinx_PicoBlaze"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9586,7 +9600,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Yggdrasil_Linux-GNU-X"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#Z80"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9598,27 +9612,27 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Zenwalk"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Zilog_Z180"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Zilog_Z280"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Zilog_Z80"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Zilog_Z800"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Zilog_Z8000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Zilog_Z80000"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9650,7 +9664,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#eCos"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#eSi-RISC"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9766,15 +9780,15 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#webOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#x86"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#x86-64"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#z-Architecture"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9802,23 +9816,23 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Ångström_distribution"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#6502"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#65816"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#6800"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#68000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorArchitecture"/>
+        <Class IRI="#CPUArchitecture"/>
         <NamedIndividual IRI="#8051"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -9826,347 +9840,347 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#86-DOS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_(Excavator_core)"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_(Steamroller_core)"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_K6-2+"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#AMD_K6-III+"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_146805"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6800"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68008"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6801"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68010"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68012"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6802"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68020"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6803"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68030"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6804"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68040"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6805"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68060"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6808"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_6809"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_683XX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68851"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68881"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68882"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68HC05"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68HC08"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_68HC11"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_88100"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_88110"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_ColdFire"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP560XX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP563XX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP566XX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP567XX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP568XX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DSP96XXX"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_DragonBall"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MC1080_800"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MC14500B_Industrial_Control_Unit"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MC68832"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC512x"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC52xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC5554"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC55xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC56xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC5777C"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC57xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC5xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC82xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC83xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC85xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC86xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC87xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MPC8xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC711x"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8101-3"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8102"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8122-26"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8144-E"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8151"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8152"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8154-E"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8156-E"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8251"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8252"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8254"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MSC8256"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MXC300-30"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_601"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_603"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_603ev"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_604"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_604e"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PPC_620"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_PowerPC_7xx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_Pxxxx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_RS08"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_S08"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_Txxxx"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_i.MX1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_i.MXL"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_i.MXS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_ColdFire+"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Freescale_Semiconductor_(former_Motorola)_MCF5232,_MCF5233,_MCF5234,_MCF5235"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -10174,39 +10188,39 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Musix_GNU+Linux"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_µPD7220"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_µPD765"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_µPD765A"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_µPD7720"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_µPD77C25"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_µPD780C"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_µPD780C-1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NEC_µPD96050"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#NXP_(former_Philips_Semiconductors)_Signetics_2650"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -10214,7 +10228,7 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Oberon_(operating_system)"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#ProcessorType"/>
+        <Class IRI="#CPUType"/>
         <NamedIndividual IRI="#Oracle_Corporation_(formerly_Sun_Microsystems)_SPARC"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -10238,8 +10252,8 @@ environment perspective?</Literal>
         <NamedIndividual IRI="#Эльбрус-1_(Elbrus-1)"/>
     </ClassAssertion>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasProcessorType"/>
-        <Class IRI="#ProcessorType"/>
+        <ObjectProperty IRI="#hasCPUType"/>
+        <Class IRI="#CPUType"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#hasDistributionVersion"/>
@@ -10251,7 +10265,7 @@ environment perspective?</Literal>
     </SubDataPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="#hasCores"/>
-        <Class IRI="#Processor"/>
+        <Class IRI="#CPU"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasDistributionVersion"/>
@@ -10292,92 +10306,92 @@ environment perspective?</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Amount</IRI>
-        <Literal>Indicates the quantity of something</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Indicates the quantity of something</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CPU</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A component within a computer that carries out the instructions of a program</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CPUArchitecture</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An implementation of an instruction set architecture</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CPUType</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A processor family or model; all processors of a particular type have the same processor architecture</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Component</IRI>
-        <Literal>Any part (physical or virtual) of something else</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Any part (physical or virtual) of something else</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ComputationalEnvironment</IRI>
-        <Literal>The environment in which a computational analysis was conducted</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The environment in which a computational analysis was conducted</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Disk</IRI>
-        <Literal>A device capable of persistently storing data</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A device capable of persistently storing data</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Distribution</IRI>
-        <Literal>An operating system made from a collection of software surrounding some kernel</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An operating system made from a collection of software surrounding some kernel</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#EnvironmentVariable</IRI>
-        <Literal>A variable set within the environment that a program executes inside that controls some aspect of a program&apos;s behavior; does not include command line parameters</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A variable set within the environment that a program executes inside that controls some aspect of a program&apos;s behavior; does not include command line parameters</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Hardware</IRI>
-        <Literal>A physical component</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A physical component</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#IO_Device</IRI>
-        <Literal>A device that transfers data between a computer and an external entity</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A device that transfers data between a computer and an external entity</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Kernel</IRI>
-        <Literal>The core of a computer&apos;s operating system</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The core of a computer&apos;s operating system</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Location</IRI>
-        <Literal>A (virtual or physical) place</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A (virtual or physical) place</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Memory</IRI>
-        <Literal>A device capable of transient data storage</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A device capable of transient data storage</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#NetworkInterface</IRI>
-        <Literal>A device that transfers information between a computer and a network</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A device that transfers information between a computer and a network</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OS_Shell_Environment</IRI>
-        <Literal>An interface for a (physical or virtual) user to access an operating system</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An interface for a (physical or virtual) user to access an operating system</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OperatingSystem</IRI>
-        <Literal>System software that manages a computer&apos;s components</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Processor</IRI>
-        <Literal>A component within a computer that carries out the instructions of a program</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#ProcessorArchitecture</IRI>
-        <Literal>An implementation of an instruction set architecture</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#ProcessorType</IRI>
-        <Literal>A processor family or model; all processors of a particular type have the same processor architecture</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">System software that manages a computer&apos;s components</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Software</IRI>
-        <Literal>Instructions executed by a computer</Literal>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Instructions executed by a computer</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
