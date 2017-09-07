@@ -3,5 +3,6 @@ CompEnvUpdater/bin/
 CompEnvUpdater/target/
 bin/*.jar
 data/*.txt
+data/catalog-v001.xml
 *.un~
 *.swp

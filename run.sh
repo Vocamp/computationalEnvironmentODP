@@ -2,6 +2,8 @@
 
 set -e
 
+export LANG=en_US.UTF-8
+
 echo ">> Gathering processor names..."
 python3 bin/processors.py > data/processors.txt
 echo ">> Gathering processor architectures..."
@@ -21,8 +23,6 @@ if [[ -n $(git diff --name-only -- $ontology) ]]; then
 	if [[ $yn == "y" ]]; then
 		echo ">> Committing..."
 		git commit "$ontology" -m "Update ontology"
-		echo ">> Pushing..."
-		# git push origin
 	else
 		echo ">> Discarding..."
 		git checkout "$ontology"
